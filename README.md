@@ -6,7 +6,7 @@ Ce projet vise à fournir un programme simple en Python permettant de redémarre
 Contenu du Projet
 -----------------
 
-### 1\. `netgear_rebooter_windows_mac.py`
+### 1\. `restartRepeteur.py`
 
 Ce fichier Python contient le programme principal capable de redémarrer un répéteur WiFi Netgear. Il peut être utilisé sur les systèmes d'exploitation Windows et macOS. Assurez-vous d'avoir Python installé sur votre machine avant de l'exécuter.
 
@@ -14,9 +14,9 @@ Ce fichier Python contient le programme principal capable de redémarrer un rép
 
 bashCopy code
 
-`python netgear_rebooter_windows_mac.py`
+`python restartRepeteur.py`
 
-### 2\. `raspberry_pi/netgear_rebooter_raspberry_pi.py`
+### 2\. `Raspberry/restartRepeteur.py`
 
 Ce fichier Python est une version spécifique du programme, adaptée pour fonctionner exclusivement sur Raspberry Pi. Les utilisateurs de Raspberry Pi peuvent utiliser ce fichier pour redémarrer leur répéteur WiFi Netgear.
 
@@ -24,7 +24,7 @@ Ce fichier Python est une version spécifique du programme, adaptée pour foncti
 
 bashCopy code
 
-`python netgear_rebooter_raspberry_pi.py`
+`python restartRepeteur.py`
 
 Configuration et Prérequis
 --------------------------
@@ -38,8 +38,3 @@ bashCopy code
 
 `pip install -r requirements.txt`
 
-Remarques Importantes
----------------------
-
-*   Ce programme est spécifiquement conçu pour les répéteurs WiFi Netgear. Assurez-vous que votre modèle est compatible avant de l'utiliser.
-*   L'utilisation de ce programme est à vos propres risques. Veuillez lire et comprendre le code source avant de l'exécuter.
