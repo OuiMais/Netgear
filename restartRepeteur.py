@@ -13,6 +13,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import UnexpectedAlertPresentException
 import time
 from pushbullet import Pushbullet
 
@@ -55,9 +56,15 @@ restartComplete = WebDriverWait(browser, 300).until(EC.visibility_of_element_loc
 time.sleep(30)
 
 restartComplete.click()
-time.sleep(60)
 
 time.sleep(150)
+try:
+    alert = browser.switch_to.alert
+    alert.dismiss()
+except UnexpectedAlertPresentException as e:
+    print('[!] Error: ' + str(e))
+
+time.sleep(10)
 browser.get('http://192.168.1.43/logout.htm')
 time.sleep(5)
 

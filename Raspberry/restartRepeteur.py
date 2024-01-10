@@ -1,7 +1,7 @@
 """
     Projet : restartRepeteur
     Date Creation : 01/10/2024
-    Date Revision : 03/01/2024
+    Date Revision : 10/01/2024
     Entreprise : 3SC4P3
     Auteur: Florian HOFBAUER
     Contact :
@@ -14,6 +14,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import UnexpectedAlertPresentException
 import time
 from pushbullet import Pushbullet
 
@@ -65,7 +66,7 @@ time.sleep(60)
 
 time.sleep(150)
 try:
-    alert = browser.switch_to_alert()
+    alert = browser.switch_to.alert
     alert.dismiss()
 except UnexpectedAlertPresentException as e:
     print('[!] Error: ' + str(e))
