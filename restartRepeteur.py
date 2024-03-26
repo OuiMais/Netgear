@@ -40,7 +40,7 @@ pb = Pushbullet(api_key)
 browser.find_element(by=By.NAME, value='email_auth').send_keys(name)
 browser.find_element(by=By.NAME, value='passwd_auth').send_keys(mdp)
 
-time.sleep(5)
+time.sleep(15)
 
 # Click Log In
 browser.find_element(by=By.ID, value='loginBt').click()
