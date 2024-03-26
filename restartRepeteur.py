@@ -14,6 +14,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import UnexpectedAlertPresentException
+from selenium.common.exceptions import NoSuchElementException
 import time
 from pushbullet import Pushbullet
 
@@ -46,6 +47,17 @@ time.sleep(15)
 browser.find_element(by=By.ID, value='loginBt').click()
 time.sleep(5)
 
+try:
+    # Essayez de trouver l'élément
+    loginTest = browser.find_element(by=By.ID, value='loginBt')
+except NoSuchElementException:
+    loginTest = ''
+
+if loginTest != '':
+    loginTest.click()
+
+time.sleep(15)
+
 # Click restart
 browser.find_element(by=By.ID, value='restartBt').click()
 time.sleep(5)
@@ -63,8 +75,6 @@ try:
     alert.dismiss()
 except UnexpectedAlertPresentException as e:
     print('[!] Error: ' + str(e))
-    notif = "Restart error." + str(e)
-    push = pb.push_note('Netgear Repeter', notif)
 
 time.sleep(10)
 browser.get('http://192.168.1.43/logout.htm')
