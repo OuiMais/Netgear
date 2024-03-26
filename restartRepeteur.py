@@ -63,6 +63,8 @@ try:
     alert.dismiss()
 except UnexpectedAlertPresentException as e:
     print('[!] Error: ' + str(e))
+    notif = "Restart error." + str(e)
+    push = pb.push_note('Netgear Repeter', notif)
 
 time.sleep(10)
 browser.get('http://192.168.1.43/logout.htm')
