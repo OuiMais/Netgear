@@ -1,7 +1,7 @@
 """
     Projet : restartRepeteur
     Date Creation : 01/10/2024
-    Date Revision : 17/01/2024
+    Date Revision : 26/03/2024
     Entreprise : 3SC4P3
     Auteur: Florian HOFBAUER
     Contact :
@@ -45,7 +45,7 @@ time.sleep(15)
 
 # Click Log In
 browser.find_element(by=By.ID, value='loginBt').click()
-time.sleep(5)
+time.sleep(15)
 
 try:
     # Essayez de trouver l'élément
