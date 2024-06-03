@@ -1,7 +1,7 @@
 """
     Projet : restartRepeteur
-    Date Creation : 01/10/2024
-    Date Revision : 26/03/2024
+    Date Creation : 01/10/2023
+    Date Revision : 03/06/2024
     Entreprise : 3SC4P3
     Auteur: Florian HOFBAUER
     Contact :
@@ -26,8 +26,11 @@ options.add_argument("--disable-popup-blocking")
 # Initiate the browser
 browser = webdriver.Chrome(options=options)
 
+ipNetgear = "http://192.168.1.28/"
+
+link = ipNetgear + "backUpSettings.html"
 # Open the Website
-browser.get('http://192.168.1.43/backUpSettings.html')
+browser.get(link)
 
 # Your  credentials
 name = 'floflodu55@hotmail.fr'
@@ -76,8 +79,10 @@ try:
 except UnexpectedAlertPresentException as e:
     print('[!] Error: ' + str(e))
 
+link = ipNetgear + "logout.html"
+
 time.sleep(10)
-browser.get('http://192.168.1.43/logout.htm')
+browser.get(link)
 time.sleep(5)
 
 notif = "Restart complete."
