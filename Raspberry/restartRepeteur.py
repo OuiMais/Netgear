@@ -87,7 +87,7 @@ try:
 except UnexpectedAlertPresentException as e:
     print('[!] Error: ' + str(e))
 
-link = ipNetgear + "logout.html"
+link = ipNetgear + "logout.htm"
 
 time.sleep(10)
 browser.get(link)
